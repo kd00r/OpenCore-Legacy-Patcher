@@ -293,8 +293,8 @@ set million colour before rebooting"""
         elif self.constants.detected_os == self.constants.catalina:
             print("- Installing General Acceleration Kext patches for Catalina")
             self.add_new_binaries(SysPatchArray.AddGeneralAccelCatalina, self.constants.legacy_general_path)
-        elif self.constants.detected_os == self.constants.big_sur:
-            print("- Installing General Acceleration Kext patches for Big Sur")
+        elif self.constants.detected_os in [self.constants.big_sur, self.constants.monterey]:
+            print("- Installing General Acceleration Kext patches for Big Sur/Monterey")
             self.add_new_binaries(SysPatchArray.AddGeneralAccel, self.constants.legacy_general_path)
 
     # Nvidia
@@ -303,8 +303,8 @@ set million colour before rebooting"""
             print("- Installing Nvidia Acceleration Kext patches for Mojave/Catalina")
             self.gpu_accel_legacy()
             self.add_new_binaries(SysPatchArray.AddNvidiaAccelLegacy, self.constants.legacy_nvidia_path)
-        elif self.constants.detected_os == self.constants.big_sur:
-            print("- Installing Nvidia Acceleration Kext patches for Big Sur")
+        elif self.constants.detected_os in [self.constants.big_sur, self.constants.monterey]:
+            print("- Installing Nvidia Acceleration Kext patches for Big Sur/Monterey")
             self.delete_old_binaries(SysPatchArray.DeleteNvidiaAccel11)
             self.gpu_accel_legacy()
             self.add_new_binaries(SysPatchArray.AddNvidiaAccel11, self.constants.legacy_nvidia_path)
@@ -318,8 +318,8 @@ set million colour before rebooting"""
             print("- Installing TeraScale 1 Acceleration Kext patches for Mojave/Catalina")
             self.gpu_accel_legacy()
             self.add_new_binaries(SysPatchArray.AddAMDAccelLegacy, self.constants.legacy_amd_path)
-        elif self.constants.detected_os == self.constants.big_sur:
-            print("- Installing TeraScale 1 Acceleration Kext patches for Big Sur")
+        elif self.constants.detected_os in [self.constants.big_sur, self.constants.monterey]:
+            print("- Installing TeraScale 1 Acceleration Kext patches for Big Sur/Monterey")
             self.delete_old_binaries(SysPatchArray.DeleteAMDAccel11)
             self.gpu_accel_legacy()
             self.add_new_binaries(SysPatchArray.AddAMDAccel11, self.constants.legacy_amd_path)
@@ -332,8 +332,8 @@ set million colour before rebooting"""
             print("- Installing TeraScale 2 Acceleration Kext patches for Mojave/Catalina")
             self.gpu_accel_legacy()
             self.add_new_binaries(SysPatchArray.AddAMDAccelLegacy, self.constants.legacy_amd_path)
-        elif self.constants.detected_os == self.constants.big_sur:
-            print("- Installing TeraScale 2 Acceleration Kext patches for Big Sur")
+        elif self.constants.detected_os in [self.constants.big_sur, self.constants.monterey]:
+            print("- Installing TeraScale 2 Acceleration Kext patches for Big Sur/Monterey")
             self.delete_old_binaries(SysPatchArray.DeleteAMDAccel11)
             self.delete_old_binaries(SysPatchArray.DeleteAMDAccel11TS2)
             self.gpu_accel_legacy()
@@ -348,8 +348,8 @@ set million colour before rebooting"""
             print("- Installing Ironlake Acceleration Kext patches for Mojave/Catalina")
             self.gpu_accel_legacy()
             self.add_new_binaries(SysPatchArray.AddIntelGen1Accel, self.constants.legacy_intel_gen1_path)
-        elif self.constants.detected_os == self.constants.big_sur:
-            print("- Installing Ironlake Acceleration Kext patches for Big Sur")
+        elif self.constants.detected_os in [self.constants.big_sur, self.constants.monterey]:
+            print("- Installing Ironlake Acceleration Kext patches for Big Sur/Monterey")
             self.delete_old_binaries(SysPatchArray.DeleteNvidiaAccel11)
             self.gpu_accel_legacy()
             self.add_new_binaries(SysPatchArray.AddIntelGen1Accel, self.constants.legacy_intel_gen1_path)
@@ -362,8 +362,8 @@ set million colour before rebooting"""
             print("- Installing Sandy Bridge Acceleration Kext patches for Mojave/Catalina")
             self.gpu_accel_legacy()
             self.add_new_binaries(SysPatchArray.AddIntelGen2Accel, self.constants.legacy_intel_gen2_path)
-        elif self.constants.detected_os == self.constants.big_sur:
-            print("- Installing Sandy Bridge Acceleration Kext patches for Big Sur")
+        elif self.constants.detected_os in [self.constants.big_sur, self.constants.monterey]:
+            print("- Installing Sandy Bridge Acceleration Kext patches for Big Sur/Monterey")
             self.delete_old_binaries(SysPatchArray.DeleteNvidiaAccel11)
             self.gpu_accel_legacy()
             self.add_new_binaries(SysPatchArray.AddIntelGen2Accel, self.constants.legacy_intel_gen2_path)
