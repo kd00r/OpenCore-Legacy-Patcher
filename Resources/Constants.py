@@ -148,6 +148,7 @@ class Constants:
             self.mojave,
             self.catalina,
             self.big_sur,
+            self.monterey,
         ]
 
     # Payload Location
