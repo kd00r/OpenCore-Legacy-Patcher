@@ -148,7 +148,7 @@ def patching_status(os_sip):
         sip_enabled = False
 
     fv_status: str = subprocess.run("fdesetup status".split(), stdout=subprocess.PIPE, stderr=subprocess.STDOUT).stdout.decode()
-    if fv_status.startswith("FileVault is Off"):
+    if "FileVault is Off" in fv_status:
         fv_enabled = False
 
     if not (Path(gen6_kext).exists() and Path(gen7_kext).exists()):
